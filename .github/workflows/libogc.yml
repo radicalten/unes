@@ -12,7 +12,8 @@ jobs:
       uses: actions/checkout@v4
     - name: Compile
       run: |
-        make -f Makefile.wiiogc -j$(nproc)
+        cd build_scripts
+        make -f gc_devkitppc.mak -j$(nproc)
     - name: Upload
       uses: actions/upload-artifact@v4
       with:
